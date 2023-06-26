@@ -1,19 +1,23 @@
 #include "functions.c"
 
-int main(int argc, char const *argv[]) {
+int main(int argc, char const *argv[])
+{
   struct Playlist *playlist = malloc(sizeof(struct Playlist));
   (*playlist).musics = malloc(sizeof(struct Music));
 
-  while (true) {
+  while (true)
+  {
     showMenu();
     int option = getOption();
 
-    if (!isValidOption(option)) {
+    if (!isValidOption(option))
+    {
       invalidOption();
       continue;
     }
 
-    if (option == OPTIONS_LENGTH) break;
+    if (option == OPTIONS_LENGTH)
+      break;
     (*FUNCTIONS[option])(playlist);
     enterToContinue();
   };

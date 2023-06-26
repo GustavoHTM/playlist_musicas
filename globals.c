@@ -1,32 +1,38 @@
-struct Artist {
-  char *name;
-  char *nationality;
+struct Artist
+{
+  char name[50];
+  char nationality[50];
 };
 
-struct Date {
+struct Date
+{
   int day, month, year;
 };
 
-struct Music {
-  char *name;
+struct Music
+{
+  char name[50];
   int duration;
-  char *style;
+  char style[50];
   struct Artist artist;
   struct Date registrationDate;
 };
 
-struct Playlist {
+struct Playlist
+{
   struct Music *musics;
 };
 
 #define RECORDS_PATH "records.txt"
 
-void enterToContinue() {
+void enterToContinue()
+{
   printf("\n\n>> Pressione enter para continuar...");
   getch();
 }
 
-void message(char *message) {
+void message(char *message)
+{
   printf("\n%s", message);
   enterToContinue();
 }

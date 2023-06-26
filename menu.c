@@ -1,9 +1,10 @@
 #define OPTIONS_LENGTH 5
 
 const char MENU_OPTIONS[OPTIONS_LENGTH][50] = {"Inserir", "Remover", "Listar",
-                                               "Cadastrar", "Sair do programa"};
+                                               "Mostrar", "Sair do programa"};
 
-void showMenu() {
+void showMenu()
+{
   clearScreen();
   printf("Gerenciamento de conjuntos\n\n");
 
@@ -12,7 +13,8 @@ void showMenu() {
   printf("\n>> Escolha uma opcao: ");
 }
 
-int getOption() {
+int getOption()
+{
   int option;
   scanf("%d", &option);
   return option;
